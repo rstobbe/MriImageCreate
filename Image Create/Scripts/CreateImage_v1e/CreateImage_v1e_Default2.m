@@ -11,7 +11,7 @@ if strcmp(filesep,'\')
 elseif strcmp(filesep,'/')
 end
 importfunc = 'ImportFID_Siemens_v2h';
-imconfunc = 'ImConst_3DNonCart_v1g';
+imconfunc = 'ImConst_3DNonCart_v1k';
 imscalefunc = 'ImScaleSiemens_v1a';
 
 m = 1;

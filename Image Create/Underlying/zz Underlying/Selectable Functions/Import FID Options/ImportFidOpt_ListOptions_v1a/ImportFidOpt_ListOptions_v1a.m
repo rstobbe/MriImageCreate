@@ -16,7 +16,7 @@ err.msg = '';
 %---------------------------------------------
 OPT.method = OPTipt.Func;
 OPT.visuals = OPTipt.('Visuals');
-OPT.fovadjust = OPTipt.('FovAdjust')';
+OPT.fovadjust = OPTipt.('FovAdjust');
 OPT.doaveraging = OPTipt.('DoAveraging');
 OPT.rcvrtest = OPTipt.('Receivers');
 
