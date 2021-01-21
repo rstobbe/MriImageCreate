@@ -101,6 +101,8 @@ else
                 if isfield(ICipt.([CallingLabel,'_Data']),'Recon_File_Data')
                     reconloaded = 1;
                 end
+            else
+                LoadTraj = PreSelTraj;
             end
         end
     end
