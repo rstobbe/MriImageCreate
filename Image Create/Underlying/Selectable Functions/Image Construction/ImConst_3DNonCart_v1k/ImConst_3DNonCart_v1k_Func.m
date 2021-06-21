@@ -2,7 +2,7 @@
 % 
 %=========================================================
 
-function [IC,err] = ImConst_3DNonCart_v1j_Func(IC,INPUT)
+function [IC,err] = ImConst_3DNonCart_v1k_Func(IC,INPUT)
 
 Status2('busy','Create Image 3D Non-Cartesian',2);
 Status2('done','',3);
