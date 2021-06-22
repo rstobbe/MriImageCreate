@@ -277,9 +277,9 @@ end
 if LoadAll == 1 || not(isfield(ICipt.([CallingLabel,'_Data']),'InvFilt_File_Data'))
     Status2('busy','Load Inversion Filter',2);
     if strcmp(RECON.prec,'Single')
-        file = [invfiltloc,'IF_',KSLCT.kern,'zf',ZFIL.zf,'S'];
+        file = [invfiltloc,'IF_',KSLCT.kern,'zf',num2str(ZFIL.zf),'S'];
     else
-        file = [invfiltloc,'IF_',KSLCT.kern,'zf',ZFIL.zf];
+        file = [invfiltloc,'IF_',KSLCT.kern,'zf',num2str(ZFIL.zf)];
     end
     load(file);
     saveData.path = file;
@@ -289,9 +289,9 @@ else
     if zfloaded ~= str2double(ZFIL.zf)
         Status2('busy','Load Inversion Filter',2);
         if strcmp(RECON.prec,'Single')
-            file = [invfiltloc,'IF_',KSLCT.kern,'zf',ZFIL.zf,'S'];
+            file = [invfiltloc,'IF_',KSLCT.kern,'zf',num2str(ZFIL.zf),'S'];
         else
-            file = [invfiltloc,'IF_',KSLCT.kern,'zf',ZFIL.zf];
+            file = [invfiltloc,'IF_',KSLCT.kern,'zf',num2str(ZFIL.zf)];
         end
         load(file);
         saveData.path = file;

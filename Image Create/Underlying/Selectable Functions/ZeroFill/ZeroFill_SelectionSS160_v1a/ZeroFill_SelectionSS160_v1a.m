@@ -14,7 +14,7 @@ err.msg = '';
 % Return Panel Input
 %---------------------------------------------
 ZFIL.method = ZFILipt.Func;
-ZFIL.zf = ZFILipt.('ZeroFill');
+ZFIL.zf = str2double(ZFILipt.('ZeroFill'));
 
 Status2('done','',2);
 Status2('done','',3);
