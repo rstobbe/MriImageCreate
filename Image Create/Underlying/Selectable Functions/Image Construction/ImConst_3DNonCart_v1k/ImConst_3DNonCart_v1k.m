@@ -39,8 +39,10 @@ IC.orientfunc = ICipt.('Orientfunc').Func;
 %---------------------------------------------
 if isfield(ICipt.('Recon_File').Struct,'filename')
     PreSelTraj = ICipt.('Recon_File').Struct.filename;          % one from existing script
+    SelectedFile = ICipt.('Recon_File').Struct.selectedfile;
 else
     PreSelTraj = '';
+    SelectedFile = '';
 end
     
 %---------------------------------------------
@@ -115,7 +117,11 @@ if reconloaded == 0
     saveData = [];
     PanelLabel = 'Recon_File';
     Status2('busy','Load Reconstruction Data',2);
-    file2load = [trajreconloc,'\',LoadTraj,'.mat'];
+    if not(isempty(SelectedFile))
+        file2load = SelectedFile;
+    else
+        file2load = [trajreconloc,'\',LoadTraj,'.mat'];
+    end
     if exist(file2load,'file')
         load(file2load);
         saveData.file = [LoadTraj,'.mat'];
@@ -286,7 +292,7 @@ if LoadAll == 1 || not(isfield(ICipt.([CallingLabel,'_Data']),'InvFilt_File_Data
     ICipt.([CallingLabel,'_Data']).('InvFilt_File_Data') = saveData;
 else
     zfloaded = ICipt.([CallingLabel,'_Data']).('InvFilt_File_Data').IFprms.ZF;
-    if zfloaded ~= str2double(ZFIL.zf)
+    if zfloaded ~= ZFIL.zf
         Status2('busy','Load Inversion Filter',2);
         if strcmp(RECON.prec,'Single')
             file = [invfiltloc,'IF_',KSLCT.kern,'zf',num2str(ZFIL.zf),'S'];

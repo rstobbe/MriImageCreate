@@ -61,7 +61,11 @@ Im = IC.Im;
 %----------------------------------------------
 func = str2func([IMG.imscalefunc,'_Func']);  
 INPUT.Im = Im;
-INPUT.zf = str2double(IC.zf);
+if isstring(IC.zf)
+    INPUT.zf = str2double(IC.zf);
+else
+    INPUT.zf = IC.zf;
+end
 INPUT.FID = FID;
 INPUT.TORD = TORD;
 [SCALE,err] = func(SCALE,INPUT);
